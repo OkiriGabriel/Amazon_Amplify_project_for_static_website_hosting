@@ -28,7 +28,7 @@ export class MyInfrastructureStack extends cdk.Stack {
       functionName: 'MyLambdaFunction',
       runtime: lambda.Runtime.NODEJS_16_X,
       handler: 'index.handler',
-      code: lambda.Code.fromAsset('./lambda.js'), // Change this to your actual Lambda code path
+      code: lambda.Code.fromAsset('/Users/apple/Documents/documents/git/MyCDKApp/lambda'), // Change this to your actual Lambda code path
       environment: {
         S3_BUCKET_NAME: amplifyApp.name,
       },
@@ -58,5 +58,5 @@ export class MyInfrastructureStack extends cdk.Stack {
   }
 }
 
-// const app = new cdk.App();
-// new MyInfrastructureStack(app, 'MyInfrastructureStack');
+const app = new cdk.App();
+new MyInfrastructureStack(app, 'MyInfrastructureStack');
